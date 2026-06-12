@@ -10,6 +10,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.event_log import EventLog
 from app.services.ollama_client import OllamaClient
+from app.services.ai_client import AIClient
 
 logger = logging.getLogger(__name__)
 
@@ -25,7 +26,7 @@ class BaseAgent(ABC):
 
     def __init__(self, db: AsyncSession, llm: OllamaClient | None = None) -> None:
         self.db = db
-        self.llm = llm or OllamaClient()
+        self.llm = llm or AIClient()
 
     @abstractmethod
     async def run(self, **kwargs: Any) -> AgentResult: ...

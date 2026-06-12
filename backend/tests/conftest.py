@@ -28,7 +28,7 @@ class FakeOllama:
 
     async def generate_json(self, prompt: str, system: str = "", temperature: float = 0.3):
         p = prompt.lower()
-        if "niches" in p:
+        if "niches" in p or "opportunities" in p:
             return [{"keyword": f"budget planner {i}", "niche": "finance",
                      "score": 0.9 - i * 0.1, "rationale": "test"} for i in range(3)]
         if "product concept" in p or "design one" in p:
