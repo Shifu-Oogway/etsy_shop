@@ -1,0 +1,32 @@
+# ---------- Environment & secrets ----------
+.env
+.env.bak
+*.local
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# ---------- Node / Next.js ----------
+node_modules/
+.next/
+out/
+npm-debug.log*
+
+# ---------- Generated runtime data ----------
+generated_products/
+backups/
+
+# ---------- Docker / OS ----------
+*.log
+.DS_Store
+Thumbs.db
+
+# ---------- Editor ----------
+.vscode/
+.idea/
+*.swp
